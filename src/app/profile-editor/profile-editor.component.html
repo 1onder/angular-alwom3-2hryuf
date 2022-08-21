@@ -1,28 +1,30 @@
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-  <label for="first-name">Rapids: </label>
+  <label for="first-name">Search Criteria: </label>
   <input id="first-name" type="text" formControlName="firstName" required>
 
-  <label for="last-name">Science Hub: </label>
+  <label for="last-name">Search Criteria: </label>
   <input id="last-name" type="text" formControlName="lastName">
 
   <div formGroupName="address">
 
-    <label for="street">STICS: </label>
+    <label for="street">Search Criteria: </label>
     <input id="street" type="text" formControlName="street">
 
-    <label for="city">Search All: </label>
-    <input id="city" type="text" formControlName="city">
 
 
   </div>
 
   <div formArrayName="aliases">
-    <h2>Addtional Search Params</h2>
-    <button type="button" (click)="addAlias()">+ Add another Param</button>
+    <h2>Addtional Search Criteria</h2>
+    <button type="button" (click)="addAlias()">+ Add Search Critera</button>
+
+ 
+    <h2>Remove Search Criteria</h2>
+    <button type="button" (click)="addAlias()">- Remove Search Critera</button>
 
     <div *ngFor="let alias of aliases.controls; let i=index">
       <!-- The repeated alias template -->
-      <label for="alias-{{ i }}">Alias:</label>
+      <label for="alias-{{ i }}">Addtional:</label>
       <input id="alias-{{ i }}" type="text" [formControlName]="i">
     </div>
   </div>

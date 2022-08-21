@@ -42,6 +42,10 @@ export class ProfileEditorComponent {
     this.aliases.push(this.fb.control(''));
   }
 
+  removeAlias() {
+    this.aliases.push(this.fb.control(''))
+    
+  }
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.profileForm.value);
